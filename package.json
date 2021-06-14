@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=96a883735e31"
   },
   "dependencies": {
     "next": "latest",
@@ -25,6 +26,7 @@
     "@storybook/react": "^6.2.9",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.2.2",
+    "chromatic": "^5.9.0",
     "postcss": "^7.0.36",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4"
   }
