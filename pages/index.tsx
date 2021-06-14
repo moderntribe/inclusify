@@ -31,6 +31,10 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
       <Head>
         <title>Inclusify by MT</title>
+        <meta
+          name="description"
+          content="Build a more inclusive world, word by word. Remove gender, age, location biases from your texts."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
