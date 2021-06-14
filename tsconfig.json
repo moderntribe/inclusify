@@ -23,6 +23,7 @@
       "@components/*": ["components/*"],
       "@hooks": ["hooks"],
       "@hooks/*": ["hooks/*"],
+      "@styles/*": ["styles/*"],
       "@utils": ["utils"],
       "@utils/*": ["utils/*"]
     }

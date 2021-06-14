@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app';
 
 import { withQueryClient } from '@hooks';
 
-import 'tailwindcss/tailwind.css';
+import '@styles/index.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
