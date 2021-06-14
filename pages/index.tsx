@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Head from 'next/head';
+import { useDebounce } from 'use-debounce';
 
 import { Selector, TextArea, TextResult } from '@components';
 import { useSelector, useTranslation } from '@hooks';
@@ -13,13 +14,12 @@ const OPTIONS = [
 export default function Home() {
   const selector = useSelector(OPTIONS);
   const [text, setText] = React.useState('');
+  const [debounceText] = useDebounce(text, 1000);
 
   const { isFetching, data } = useTranslation({
-    text,
+    text: debounceText,
     options: Array.isArray(selector.checkbox.state) ? selector.checkbox.state : []
   });
-
-  console.log({ data });
 
   function onChangeText(event: React.FormEvent<HTMLTextAreaElement>) {
     // eslint-disable-next-line
