@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export function TextArea() {
-    return (
-        <textarea>
-            
-        </textarea>
-    )
+  return <textarea></textarea>;
 }

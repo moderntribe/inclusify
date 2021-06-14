@@ -1,8 +1,11 @@
-import 'tailwindcss/tailwind.css'
-import { withQueryClient } from '../hooks'
+import type { AppProps } from 'next/app';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import { withQueryClient } from '@hooks';
+
+import 'tailwindcss/tailwind.css';
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
 }
 
-export default withQueryClient(MyApp)
+export default withQueryClient(MyApp);
