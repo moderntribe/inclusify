@@ -15,6 +15,7 @@ export function useSelector(options: SelectorOption[] = []): UseSelector {
   const checkbox = useCheckboxState({
     state: options.filter(option => !option.disabled).map(option => option.id)
   });
+  // TODO: Save this state in url
   return {
     options,
     checkbox
