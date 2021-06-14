@@ -1,13 +1,13 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import { useQuery, UseQueryResult } from 'react-query';
 
-const BASE_URL = 'http://0.0.0.0:8080'; //'https://europe-west1-degenderify.cloudfunctions.net';
+const BASE_URL = 'https://europe-west1-degenderify.cloudfunctions.net/degenderify'; // 'http://0.0.0.0:8080'
 
 type QueryKey = [string, string, string[]];
 
 async function fetchTranslation({ queryKey }: { queryKey: QueryKey }) {
   const [, text, options] = queryKey;
-  const { data } = await axios.get(BASE_URL + '/', {
+  const { data } = await axios.get(BASE_URL, {
     params: {
       text,
       options
