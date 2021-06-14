@@ -1,6 +1,6 @@
 import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-import { uuid } from 'uuidv4';
+import { v4 as uuid } from 'uuid';
 
 import { Translation } from '@hooks';
 
