@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import { Selector, TextArea, TextResult } from '@components';
-import { useSelector } from '@hooks';
+import { useSelector, useTranslation } from '@hooks';
 const OPTIONS = [
   { label: 'Gender', id: 'gender' },
   { label: 'Name', id: 'name' },
@@ -10,6 +10,8 @@ const OPTIONS = [
 ];
 export default function Home() {
   const selector = useSelector(OPTIONS);
+
+  useTranslation();
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
@@ -23,7 +25,7 @@ export default function Home() {
           Inclusify
         </h1>
         <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-          Build a more incusive world, word by word.
+          Build a more inclusive world, word by word.
         </p>
         <Selector className="mt-8 space-x-4" {...selector} />
         <div className="flex flex-wrap lg:flex-nowrap items-center justify-around max-w-6xl mt-6 w-full gap-4">
