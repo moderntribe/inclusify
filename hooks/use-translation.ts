@@ -1,14 +1,14 @@
 import axios, { AxiosResponse } from 'axios';
 import { useQuery, UseQueryResult } from 'react-query';
 
+const BASE_URL = 'http://0.0.0.0:8080'; //'https://europe-west1-degenderify.cloudfunctions.net';
+
 type QueryKey = [string, string, string[]];
 
 async function fetchTranslation({ queryKey }: { queryKey: QueryKey }) {
   const [, text, options] = queryKey;
-  const { data } = await axios({
-    url: '/translate',
-    method: 'POST',
-    data: {
+  const { data } = await axios.get(BASE_URL + '/', {
+    params: {
       text,
       options
     }
