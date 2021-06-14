@@ -13,7 +13,7 @@ export function TextResult(props: TextResultProps) {
 
   return (
     <div id="result" {...rest}>
-      <p style={{ textAlign: 'start' }}>
+      <p className="text-left">
         {translation.reduce((acc, word, index) => {
           const isFirst = 0 === index;
           const isLast = translation.length - 1 === index;
