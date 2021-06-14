@@ -4,14 +4,12 @@ import { Selector, TextArea, TextResult } from '@components';
 import { useSelector } from '@hooks';
 const OPTIONS = [
   { label: 'Gender', id: 'gender' },
-  { label: 'Race', id: 'race' },
-  { label: 'Religion', id: 'religion', disabled: true }
+  { label: 'Name', id: 'name' },
+  { label: 'Address', id: 'address', disabled: true }
   /*   { name: 'Sexual orientation', href: '#', current: false, disabled: true }, */
 ];
 export default function Home() {
   const selector = useSelector(OPTIONS);
-
-  console.log('active selector', selector.selected);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
@@ -27,7 +25,7 @@ export default function Home() {
         <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
           Build a more incusive world, word by word.
         </p>
-        <Selector className="mt-8" {...selector} />
+        <Selector className="mt-8 space-x-4" {...selector} />
         <div className="flex flex-wrap lg:flex-nowrap items-center justify-around max-w-6xl mt-6 w-full gap-4">
           <div className="flex w-full lg:w-1/2 min-h-sm bg-white overflow-hidden shadow rounded-lg h-full">
             <TextArea className="px-4 py-5 sm:p-6 w-full" />

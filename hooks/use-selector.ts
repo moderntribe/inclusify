@@ -1,4 +1,4 @@
-import { RadioStateReturn, useRadioState } from 'reakit/Radio';
+import { CheckboxStateReturn, useCheckboxState } from 'reakit/Checkbox';
 
 export type SelectorOption = {
   id: string | number;
@@ -7,16 +7,16 @@ export type SelectorOption = {
 };
 
 export type UseSelector = {
-  selected: string | number;
   options: SelectorOption[];
-  radio: RadioStateReturn;
+  checkbox: CheckboxStateReturn;
 };
 
-export function useSelector(options: SelectorOption[]): UseSelector {
-  const radio = useRadioState({ state: options?.[0].id });
+export function useSelector(options: SelectorOption[] = []): UseSelector {
+  const checkbox = useCheckboxState({
+    state: options.filter(option => !option.disabled).map(option => option.id)
+  });
   return {
-    selected: radio.state,
     options,
-    radio
+    checkbox
   };
 }
