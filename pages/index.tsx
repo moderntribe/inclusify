@@ -43,14 +43,16 @@ export default function Home() {
         </p>
         <Selector className="mt-8 space-x-4" {...selector} />
         <div className="flex flex-wrap lg:flex-nowrap items-center justify-around max-w-6xl mt-6 w-full gap-4">
-          <div className="flex w-full lg:w-1/2 min-h-sm bg-white overflow-hidden shadow rounded-lg h-full">
-            <TextArea className="px-4 py-5 sm:p-6 w-full" onChange={onChangeText} />
+          <div className="flex w-full lg:w-1/2 min-h-sm bg-white overflow-hidden shadow rounded-lg h-full p-1">
+            <TextArea
+              className="px-4 py-5 sm:p-6 w-full focus:outline-none focus:ring focus:border-blue-300 rounded"
+              onChange={onChangeText}
+            />
           </div>
-          <div className="flex flex-col  w-full lg:w-1/2 min-h-sm bg-white overflow-hidden shadow rounded-lg h-full">
+          <div className="flex flex-col w-full lg:w-1/2 min-h-sm bg-white overflow-hidden shadow rounded-lg h-full">
             <TextResult
               className="px-4 py-5 sm:p-6 w-full flex-1 flex flex-wrap whitespace-pre-wrap"
               translation={data}
-              style={{ alignContent: 'flex-start', whiteSpace: 'pre-wrap' }}
             />
             <div className="bg-gray-50 px-4 py-4 sm:px-6">Unbiased version</div>
           </div>
