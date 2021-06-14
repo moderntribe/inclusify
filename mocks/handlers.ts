@@ -1,7 +1,5 @@
 import { rest } from 'msw';
 
-import { UseTranslation } from '@hooks';
-
 type TranslateRequestBody = {
   text: string;
   options: string[];
