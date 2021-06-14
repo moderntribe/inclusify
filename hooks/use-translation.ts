@@ -13,7 +13,7 @@ async function fetchTranslation({ queryKey }: { queryKey: QueryKey }) {
       options
     }
   });
-  return data as Translation;
+  return data as string;
 }
 
 export type UseTranslation = {
@@ -30,7 +30,7 @@ export type Translation = (
     }
 )[];
 
-export function useTranslation(input: UseTranslation): UseQueryResult<Translation, unknown> {
+export function useTranslation(input: UseTranslation): UseQueryResult<string, unknown> {
   const { text, options } = input;
   const query = useQuery(['translation', text, options], fetchTranslation);
   return query;
