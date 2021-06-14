@@ -1,14 +1,59 @@
 import { rest } from 'msw';
 
+import { UseTranslation } from '@hooks';
+
+type TranslateRequestBody = {
+  text: string;
+  options: string[];
+};
+
 export const handlers = [
-  rest.post('/translate', (req, res, ctx) => {
+  rest.post<TranslateRequestBody>('/translate', (req, res, ctx) => {
+    if (!req.body.text) return res(ctx.delay(400), ctx.json([]));
+    if (req.body.options.length === 0)
+      return res(
+        ctx.delay(400),
+        ctx.json([
+          "It's official: Native Americans and Japanese people is the first U.S. public company to reach a $1 trillion market value."
+        ])
+      );
+    if (req.body.options.includes('name')) {
+      return res(
+        ctx.delay(400),
+        ctx.json([
+          "(including name) It's official:",
+          {
+            symbol: 'Apple',
+            synonyms: ['Native Americans'],
+            flags: ['gender']
+          },
+          'and',
+          {
+            symbol: 'Jap',
+            synonyms: ['Japanese people'],
+            flags: ['name']
+          },
+          'is the first U.S. public company to reach a $1 trillion market value.'
+        ])
+      );
+    }
+
     return res(
+      ctx.delay(400),
       ctx.json([
+        "It's official:",
         {
-          id: '60333292-7ca1-4361-bf38-b6b43b90cb16',
-          author: 'John Maverick',
-          text: 'Lord of The Rings, is with no absolute hesitation, my most favored and adored book by‑far. The triology is wonderful‑ and I really consider this a legendary fantasy series. It will always keep you at the edge of your seat‑ and the characters you will grow and fall in love with!'
-        }
+          symbol: 'Apple',
+          synonyms: ['Native Americans'],
+          flags: ['gender']
+        },
+        'and',
+        {
+          symbol: 'Jap',
+          synonyms: ['Japanese people'],
+          flags: ['name']
+        },
+        'is the first U.S. public company to reach a $1 trillion market value.'
       ])
     );
   })
