@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
-export function TextArea(props) {
-  return (
-    <textarea className="flex flex-1 border-2 border-indigo-600 rounded mx-2" {...props}></textarea>
-  );
+export type TextAreaProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+> & {
+  children?: ReactNode;
+};
+
+export function TextArea(props: TextAreaProps) {
+  return <textarea {...props} placeholder="Type to translate"></textarea>;
 }

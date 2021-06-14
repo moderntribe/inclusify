@@ -1,12 +1,12 @@
-import React, { ReactNode } from 'react';
+import React, { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
-interface ITextResultProps {
+type TextResultProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
   children?: ReactNode;
-}
+};
 
-export function TextResult({ children, ...restProps }: ITextResultProps) {
+export function TextResult({ children, ...rest }: TextResultProps) {
   return (
-    <div id="result" className="border-2 border-indigo-600 rounded flex flex-1 mx-2" {...restProps}>
+    <div id="result" {...rest}>
       {children}
     </div>
   );
