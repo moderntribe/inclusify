@@ -8,7 +8,7 @@ import { useSelector, useTranslation } from '@hooks';
 const OPTIONS = [
   { label: 'Gender', id: 'gender' },
   { label: 'Name', id: 'name' },
-  { label: 'Address', id: 'address', disabled: true }
+  { label: 'Location', id: 'location' }
   /*   { name: 'Sexual orientation', href: '#', current: false, disabled: true }, */
 ];
 export default function Home() {
