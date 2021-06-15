@@ -8,5 +8,5 @@ export type TextAreaProps = DetailedHTMLProps<
 };
 
 export function TextArea(props: TextAreaProps) {
-  return <textarea {...props} placeholder="Type to translate"></textarea>;
+  return <textarea {...props} placeholder="Type to remove biases."></textarea>;
 }
