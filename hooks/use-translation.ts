@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useQuery, UseQueryResult } from 'react-query';
 
-const BASE_URL = 'http://0.0.0.0:8080'; //'https://europe-west1-degenderify.cloudfunctions.net/degenderify'; // 'http://0.0.0.0:8080'
+const BASE_URL = 'https://europe-west1-degenderify.cloudfunctions.net/degenderify'; // 'http://0.0.0.0:8080'
 
 type QueryKey = [string, string, string[]];
 
